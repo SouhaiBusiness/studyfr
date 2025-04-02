@@ -1,10 +1,10 @@
-import { type NextRequest, NextResponse } from "next/server"
+import { NextResponse } from "next/server"
 import clientPromise from "@/lib/db"
 import { ObjectId } from "mongodb"
 
-export async function GET(req: NextRequest, { params }: { params: { id: string } }) {
+export async function GET(request: Request, context: { params: { id: string } }) {
   try {
-    const id = params.id
+    const id = context.params.id
 
     const client = await clientPromise
     const db = client.db("frenchstudies")
@@ -24,11 +24,11 @@ export async function GET(req: NextRequest, { params }: { params: { id: string }
   }
 }
 
-export async function PUT(req: NextRequest, { params }: { params: { id: string } }) {
+export async function PUT(request: Request, context: { params: { id: string } }) {
   try {
-    const id = params.id
+    const id = context.params.id
 
-    const data = await req.json()
+    const data = await request.json()
 
     const client = await clientPromise
     const db = client.db("frenchstudies")
@@ -64,9 +64,9 @@ export async function PUT(req: NextRequest, { params }: { params: { id: string }
   }
 }
 
-export async function DELETE(req: NextRequest, { params }: { params: { id: string } }) {
+export async function DELETE(request: Request, context: { params: { id: string } }) {
   try {
-    const id = params.id
+    const id = context.params.id
 
     const client = await clientPromise
     const db = client.db("frenchstudies")
