@@ -4,9 +4,7 @@ import { ObjectId } from "mongodb"
 
 export async function GET(req: NextRequest, { params }: { params: { id: string } }) {
   try {
-    // Fix: Await params before accessing its properties
-    const paramsData = await params
-    const id = paramsData.id
+    const id = params.id
 
     const client = await clientPromise
     const db = client.db("frenchstudies")
@@ -28,9 +26,7 @@ export async function GET(req: NextRequest, { params }: { params: { id: string }
 
 export async function PUT(req: NextRequest, { params }: { params: { id: string } }) {
   try {
-    // Fix: Await params before accessing its properties
-    const paramsData = await params
-    const id = paramsData.id
+    const id = params.id
 
     const data = await req.json()
 
@@ -70,9 +66,7 @@ export async function PUT(req: NextRequest, { params }: { params: { id: string }
 
 export async function DELETE(req: NextRequest, { params }: { params: { id: string } }) {
   try {
-    // Fix: Await params before accessing its properties
-    const paramsData = await params
-    const id = paramsData.id
+    const id = params.id
 
     const client = await clientPromise
     const db = client.db("frenchstudies")
