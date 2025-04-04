@@ -8,8 +8,8 @@ import ScrollToTopBtn from "@/components/ScrollToTopBtn"
 
 
 export const metadata = {
-  title: "ETUDESFRANÇAISE - French Studies Resources",
-  description: "A platform for students of French studies to access course materials, quizzes, and exams.",
+  title: "ETUDESFRANÇAISES - Ressources pour les études de français",
+  description: "Une plateforme destinée aux étudiants en études de français pour accéder aux cours, quiz et examens.",
 }
 
 export default function RootLayout({
